@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#05060f" />
+    <title>MISSILE COMMAND XR</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- In-game HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hud-block">
+          <div class="hud-label">SCORE</div>
+          <div class="hud-value" id="hud-score">0</div>
+        </div>
+        <div class="hud-block center">
+          <div class="hud-label">WAVE</div>
+          <div class="hud-value" id="hud-wave">1</div>
+          <div class="hud-mult" id="hud-mult">×1</div>
+        </div>
+        <div class="hud-block right">
+          <div class="hud-label">HIGH SCORE</div>
+          <div class="hud-value" id="hud-hi">0</div>
+        </div>
+      </div>
+      <div class="hud-bottom" id="hud-batteries"></div>
+      <div id="hud-message"></div>
+      <div id="hud-sub"></div>
+      <div id="crosshair-hint">CLICK = FIRE (NEAREST) · 1/2/3 OR A/S/D = FIRE FROM BATTERY · ESC = PAUSE</div>
+    </div>
+
+    <!-- Main menu -->
+    <div id="menu">
+      <div class="menu-bg"></div>
+      <div class="menu-inner">
+        <div class="menu-kicker">STRATEGIC DEFENSE NETWORK // NIGHTWATCH</div>
+        <h1 class="title">MISSILE<span>COMMAND</span><em>XR</em></h1>
+        <div class="menu-buttons">
+          <button id="btn-play" class="btn primary">DEPLOY</button>
+          <button id="btn-vr" class="btn" disabled>CHECKING VR…</button>
+        </div>
+        <div class="menu-hi">HIGH SCORE <b id="menu-hi">0</b></div>
+        <div class="menu-help">
+          <div><b>DESKTOP</b> Aim with mouse · Click to launch an interceptor from the nearest battery · <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd> / <kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> fire from a specific battery</div>
+          <div><b>VR</b> Point a controller · Pull trigger to launch · The targeting reticle auto-ranges onto incoming threats</div>
+          <div><b>RULES</b> Protect the six cities. Each battery holds 10 interceptors per wave. Blasts chain-react. Surviving cities and spare ammo earn bonus points. A bonus city is awarded every 10,000 points.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pause" class="hidden">
+      <div class="pause-inner">
+        <h2>PAUSED</h2>
+        <button id="btn-resume" class="btn primary">RESUME</button>
+        <button id="btn-quit" class="btn">ABORT MISSION</button>
+      </div>
+    </div>
+
+    <div id="loading">INITIALISING DEFENSE GRID…</div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
